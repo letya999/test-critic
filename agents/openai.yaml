@@ -1,0 +1,6 @@
+interface:
+  display_name: "Test Critic"
+  short_description: "Reject false confidence in written software tests"
+  default_prompt: "Use $test-critic to review the written tests before execution and require concrete repairs for material issues."
+policy:
+  allow_implicit_invocation: true

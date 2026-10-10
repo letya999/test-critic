@@ -1,0 +1,138 @@
+{
+  "skill_name": "test-critic",
+  "evals": [
+    {
+      "id": 1,
+      "name": "retry-pressure",
+      "category": "pressure",
+      "prompt": "Review the complete packet in evals/fixtures/retry-pressure.md. Make the required choice and give the next action.",
+      "files": [
+        "evals/fixtures/retry-pressure.md"
+      ],
+      "expected_output": "REVISE with a nonempty-key repair despite pressure; retain the legitimate boundary fake.",
+      "expectations": [
+        "Chooses B and requires a repair before proceeding.",
+        "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+        "Does not require a live payment provider for request construction.",
+        "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+        "Does not treat the previous revision's coverage or approval as proof for this test."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "clean-adapter",
+      "category": "clean-control",
+      "prompt": "Review the complete packet in evals/fixtures/clean-adapter.md. Give the verdict and next step.",
+      "files": [
+        "evals/fixtures/clean-adapter.md"
+      ],
+      "expected_output": "ACCEPT static review without inventing blockers or requiring execution evidence.",
+      "expectations": [
+        "Accepts the scoped test without must-fix findings.",
+        "Recognizes exact transport interaction as the dispatch contract, not self-testing.",
+        "Does not demand live delivery, one assertion per test, mutation tools, or unrelated cases.",
+        "Explicitly distinguishes static review from passing execution."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "api-authorization",
+      "category": "false-green",
+      "prompt": "Review the complete packet in evals/fixtures/api-authorization.md. Give a minimal repair.",
+      "files": [
+        "evals/fixtures/api-authorization.md"
+      ],
+      "expected_output": "REVISE: the missing resource bypasses suspension; use existing owned document and assert typed rejection and unchanged state.",
+      "expectations": [
+        "Explains the not-found guard prevents exercising the suspension decision.",
+        "Requires an existing owned document, 403/SUSPENDED, and unchanged stored title.",
+        "Does not insist on duplicating the supplied active-owner success case.",
+        "Labels sensitivity reasoning as static rather than observed execution."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "browser-recovery",
+      "category": "platform-fidelity",
+      "prompt": "Review the complete packet in evals/fixtures/browser-recovery.md. Distinguish the test's claim from what it observes.",
+      "files": [
+        "evals/fixtures/browser-recovery.md"
+      ],
+      "expected_output": "REVISE: synthetic submission bypasses native validation, so use normal resubmission and preserve the resulting regression.",
+      "expectations": [
+        "Identifies direct submit dispatch bypassing native validation on the second submission.",
+        "Requires normal click or keyboard submission after correction and a successful observable result.",
+        "Recognizes persistent custom validity as a possible product defect and does not weaken the test to hide it.",
+        "Does not reject intentional API response stubbing or claim the screenshot proves recovery.",
+        "Does not run a browser or edit production code during review."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "evidence-and-cost",
+      "category": "calibration",
+      "prompt": "Review all three independent cases in evals/fixtures/evidence-and-cost.md, returning separate verdicts.",
+      "files": [
+        "evals/fixtures/evidence-and-cost.md"
+      ],
+      "expected_output": "Accept sound bug regression without execution, reject vacuous excluded timing/property test, preserve native restart protection.",
+      "expectations": [
+        "Accepts case A as a static regression review and rejects changing 900 to 1000 merely to match the bug.",
+        "Does not block A just because Python is unavailable or claim an observed red run.",
+        "Rejects B because the configured include excludes checks/sort.spec.ts.",
+        "Explains identity/no-op sorting satisfies idempotence and calls for ordering plus element/multiplicity preservation.",
+        "Rejects the arbitrary one-millisecond/p99 claim without inventing a performance SLO.",
+        "Preserves C's process-restart integration test as distinct persistence protection."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "diagnostics-stability",
+      "category": "diagnostics-control",
+      "prompt": "Review evals/fixtures/diagnostics-stability.md with separate verdicts.",
+      "files": [
+        "evals/fixtures/diagnostics-stability.md"
+      ],
+      "expected_output": "Revise A for swallowed primary failure and unconditional cleanup error; accept B statically without custom-message or repetition quotas. Remain reviewer.",
+      "expectations": [
+        "Requires revision of A because caught assertions and unconditional cleanup obscure business failures and fail even on correct totals.",
+        "Preserves the primary assertion and routes repair to the author, without editing or executing.",
+        "Accepts B: controlled UTC clock, isolated state, boundary observations and built-in case/value diagnostics suffice.",
+        "Does not guarantee no flakes or demand repeated runs/custom messages as a static acceptance gate."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "contracts-evidence",
+      "category": "contract-evidence-control",
+      "prompt": "Review evals/fixtures/contracts-evidence.md with separate verdicts.",
+      "files": [
+        "evals/fixtures/contracts-evidence.md"
+      ],
+      "expected_output": "Revise A for bypassing wire contract and surface unresolved incompatible requirements; accept B source while rejecting claimed empirical fault/stability proof.",
+      "expectations": [
+        "Requires revision of A because internal-object assertions bypass the claimed HTTP serializer/wire representation.",
+        "Identifies equal-authority incompatible amount contracts under identical preconditions and does not choose current implementation or design a full replacement plan.",
+        "Accepts B static source protection with legitimate transport double and discriminating key assertions.",
+        "Rejects setup-error red as observed sensitivity proof, distinguishing inferred missing-key rejection from actual failing assertion.",
+        "Does not claim flake-free from retry-green or execute/delegate/edit to obtain evidence."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "async-order-invariant",
+      "category": "stability-invariant",
+      "prompt": "Review evals/fixtures/async-order-invariant.md per its task.",
+      "files": [
+        "evals/fixtures/async-order-invariant.md"
+      ],
+      "expected_output": "REVISE: isolate shared state, await and surface async errors, protect combined refunded/balance invariant without runner retries or complete redesign.",
+      "expectations": [
+        "Identifies shared account/order dependence and that the seed test proves only fixture mutation.",
+        "Identifies unjoined background work/errors and an assertion that can pass before refund executes.",
+        "Requires fresh persisted balance credit observation together with refunded state after completed operation, preserving the useful isolated flag test.",
+        "Rejects runner retries as repair, labels conclusions static, and does not execute/edit/delegate or take over case planning."
+      ]
+    }
+  ]
+}

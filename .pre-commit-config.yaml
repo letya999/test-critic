@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: validate-skill
+        name: Validate skill and public artifact links
+        entry: python scripts/validate.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: gitleaks
+        name: Scan staged changes for secrets
+        entry: gitleaks git --pre-commit --staged --redact
+        language: system
+        pass_filenames: false
+        always_run: true

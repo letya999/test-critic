@@ -1,0 +1,24 @@
+name: Branch policy
+on:
+  # Metadata-only; no checkout or secrets. The generic local rule flags the trigger alone.
+  pull_request_target: # nosemgrep: repo-safety.opengrep.github-actions-pull-request-target-checkout
+    branches: [main]
+    types: [opened, reopened, synchronize, edited, ready_for_review]
+permissions: {}
+jobs:
+  branch-policy:
+    name: branch-policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      # Trusted base workflow only: no checkout, project code, secrets or writes.
+      - name: Require this repository's dev branch
+        env:
+          HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
+          HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+          BASE_REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ "$HEAD_BRANCH" != "dev" ] || [ "$HEAD_REPOSITORY" != "$BASE_REPOSITORY" ]; then
+            echo 'main accepts pull requests only from this repository’s dev branch.'
+            exit 1
+          fi

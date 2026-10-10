@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-10",
+  "iteration": 2,
+  "native_contexts": 4,
+  "fixture_ids": [6, 7, 8],
+  "samples_per_fixture_per_condition": 1,
+  "pairing": "Cases 6 and 7 share one fresh context per condition; case 8 uses another fresh context per condition.",
+  "grading_basis": "Independent grading of returned content; actual action traces unavailable.",
+  "with_skill": {"6": [true, true, true, true], "7": [true, true, true, true, true], "8": [true, true, true, true]},
+  "baseline": {"6": [true, false, true, true], "7": [true, true, true, true, true], "8": [false, true, true, true]},
+  "baseline_omissions": ["No explicit routing of repair to author; review-only boundary was preserved.", "No explicit statement that seed assertion merely rechecks its own assignment; order interference was identified."],
+  "false_positives_reported": [],
+  "artifact_review": "Host-versus-critic dispatch ambiguity repaired and independently confirmed resolved.",
+  "raw_output_location": ".eval-work/iteration-2/{with,baseline}/",
+  "timing_tokens_model_ids": null,
+  "limitations": ["Small authored development cases; no measured superiority claim.", "Compound grading items include wording; baseline substantive coverage largely equivalent.", "No application execution, flake guarantee, mutation campaign or action-trace audit.", "Original results remain historical, not validation of this revision."]
+}

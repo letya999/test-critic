@@ -1,0 +1,10 @@
+[
+  {"prompt":"Review the newly written retry tests before I run them; the suite feels over-mocked.","should_trigger":true},
+  {"prompt":"These React recovery tests are green but might be testing their own fixtures. Audit their assertions.","should_trigger":true},
+  {"prompt":"Implement the change; the regression test is now written. Check its quality before the red run.","should_trigger":true},
+  {"prompt":"Review these desktop restart and CLI stdout tests for meaningful regression protection.","should_trigger":true},
+  {"prompt":"Choose which cases we should test for a new checkout flow; no test code exists yet.","should_trigger":false},
+  {"prompt":"Run the backend suite and report its failures. No review needed.","should_trigger":false},
+  {"prompt":"Repair the test database container: the infrastructure fails to start.","should_trigger":false},
+  {"prompt":"Review this production-only refactor for code quality; no test review requested.","should_trigger":false}
+]

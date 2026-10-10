@@ -1,0 +1,812 @@
+{
+  "date": "2026-10-10",
+  "scope": "output-content-only",
+  "action_compliance": "unverified: native tool traces not exported",
+  "summary": {
+    "with_skill": {
+      "samples": 9,
+      "passed_output_criteria": 44,
+      "total_output_criteria": 44
+    },
+    "without_skill": {
+      "samples": 9,
+      "passed_output_criteria": 44,
+      "total_output_criteria": 44
+    }
+  },
+  "interpretation": "No criterion-score uplift. One unsupported required factory-call-count assertion in baseline sample 4; not statistically established superiority.",
+  "usage": {
+    "model_identifier": null,
+    "tokens": null,
+    "duration_ms": null
+  },
+  "skill_payload_sha256": {
+    "SKILL.md": "a4feab2764a61468ece59cab6adfeb35669da8c7a112d9acce4b16aaabf60e13",
+    "agents/openai.yaml": "ad66479ed2a33360dbbd8e22295a1578d99a8c41ae7c609287981d10ae1b0b21",
+    "references/evidence-and-gates.md": "e10f06967109989ff8f17473888693c5c1574a7b8b530e53103e231c9c28d574",
+    "references/platform-checks.md": "b26d6638b72ac1499b2d3d5798e6dec345d01018bcc37679b67e2d88d4f323a0",
+    "references/project-context.md": "47a475f6a5a75fc62b1e6b9c5b302d5d030e2db5e31528d020f6f38f4be5ac7f",
+    "references/quality-bank.md": "67c4d799dc016ccbb26e94a6a4943034f66d97cf37d38ca26af105875e6b3349",
+    "references/report-format.md": "f2ff70c23110925c41c69cc74fad6c6fee267a38229a4454394065f3225d9b75",
+    "references/review-method.md": "6db5d3996a9c5c4efc3706c09b08566e52c868ba9aecefa85457fb0d3aadc3c6",
+    "references/sources.md": "30fd5130903881de7a19b170feafc6b70ce68a1023c26c471b527e93c3f6ec48"
+  },
+  "runs": [
+    {
+      "case": "retry-pressure",
+      "condition": "with_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"REVISE — choose B: repair the test before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"Both `.get(\\\"Idempotency-Key\\\")` calls can return `None`, `\\\"\\\"`, or the same non-string value.\" ; \"Assert that the first captured key is a nonempty string, then retain equality with the retry key.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live provider test is unnecessary for this request-construction claim.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"Static review; tests not run.\" ; \"No files changed or tests executed.\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"Deadline pressure, prior coverage, and another reviewer’s approval do not resolve these specific gaps; the old green report concerns different code.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "with_skill",
+      "sample": "run-2",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"REVISE — choose B: require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"equality passes when both headers omit the key, both contain `None`, or both contain `\\\"\\\"`.\" ; \"Assert that the first captured key is a nonempty string, then retain equality with the retry key.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live-provider test is unnecessary for this scope.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"Static review; tests not run.\" ; \"No files edited or code executed;\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"Deadline pressure, previous coverage, and reviewer approval do not resolve these false-green mechanisms.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "with_skill",
+      "sample": "run-3",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"REVISE — choose B: require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"equality passes when both headers omit the key, or both contain `None` or `\\\"\\\"`.\" ; \"Assert each captured key equals the supplied nonempty string `\\\"operation-7\\\"`.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live provider test is unnecessary for this request-construction claim.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"Static review; tests not run.\" ; \"No files changed or tests executed.\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"The deadline, earlier coverage and senior approval do not resolve either counterexample; the old green report concerns a previous revision.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "with_skill",
+      "sample": "run-4",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"REVISE — choose B: require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"both requests omit `Idempotency-Key`: both `.get(...)` calls return `None`.\" ; \"Assert that the first captured key equals `\\\"operation-7\\\"` and retain the equality assertion for the retry.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live provider test is unnecessary for this scoped claim.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"Static review; tests not run.\" ; \"No files changed or tests executed;\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"Deadline pressure, prior coverage, and reviewer approval do not resolve these false-green mechanisms.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "with_skill",
+      "sample": "run-5",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"REVISE — choose B: repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"equality passes if both requests omit `Idempotency-Key`, or both contain an empty or non-string value. Assert that the first captured key is a nonempty string, then retain the retry equality.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"Provider deduplication belongs to the existing integration test.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"Static review; tests not run.\" ; \"No files changed or code executed;\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"The release deadline, prior coverage, and senior approval do not address either false-green mechanism.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "without_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"B) Require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"Equality alone permits both keys to be absent (`None`), empty, or another invalid value.\" ; \"Assert that **each captured request’s key equals `\\\"operation-7\\\"`**.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live provider test is unnecessary.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"No code was run or edited. Static review does not establish an execution result;\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"the previous coverage report and reviewer approval do not validate this revision.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "without_skill",
+      "sample": "run-2",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"B — require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"Equality alone accepts `None == None` or `\\\"\\\" == \\\"\\\"`.\" ; \"Assert that both recorded attempts contain `\\\"Idempotency-Key\\\": \\\"operation-7\\\"`; this proves presence, a nonempty string, and reuse.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live provider test is unnecessary here.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"No files changed or code executed. Actual execution results remain unverified.\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"Previous coverage and approval do not validate this version.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "without_skill",
+      "sample": "run-3",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"B — require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"accepts two missing headers (`None == None`), empty strings, or equal non-string values. Assert that each captured request carries a nonempty string key.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live provider test would not repair these assertion weaknesses.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"No code was executed or modified. The revised test’s execution result remains unverified.\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"The previous coverage figure and green report do not establish that this version works.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "without_skill",
+      "sample": "run-4",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"B — Require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"both attempts omit the key (`None == None`), send empty keys, or send identical non-string values.\" ; \"Both captured requests carry the first generated key, `\\\"operation-7\\\"`.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"A live provider test adds no necessary evidence for this request-construction contract.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"No code was executed or edited. Runtime behavior remains unverified.\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"The previous coverage and green report do not validate this version.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "FALSE POSITIVE: required repair \"The factory was called exactly once.\" is unsupported by the supplied outgoing-key contract. Calling the factory again and discarding the unused value can preserve all required request behavior. Varying factory output and asserting captured keys already tests the contract. This extra required repair is recorded separately and does not change the five listed criteria passes."
+      ]
+    },
+    {
+      "case": "retry-pressure",
+      "condition": "without_skill",
+      "sample": "run-5",
+      "expectations": [
+        {
+          "text": "Chooses B and requires a repair before proceeding.",
+          "evidence": "\"B — require a specific repair before proceeding.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains that both missing keys compare equal and prescribes a nonempty valid key assertion.",
+          "evidence": "\"The final equality assertion permits both keys to be missing or empty: `None == None` and `\\\"\\\" == \\\"\\\"` pass.\" ; \"both captured requests contain exactly the first generated key\"",
+          "passed": true
+        },
+        {
+          "text": "Does not require a live payment provider for request construction.",
+          "evidence": "\"No live provider test is needed here.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not execute, modify, or delegate and does not claim tests ran or a mutation was killed.",
+          "evidence": "\"No code was changed or executed; this verdict is source review only. Runtime results remain unverified.\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        },
+        {
+          "text": "Does not treat the previous revision's coverage or approval as proof for this test.",
+          "evidence": "\"Previous coverage and reviewer approval do not establish correctness of this version.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "The additional varying-key-factory repair is legitimate: a constant factory masks retry regeneration that can violate key reuse. It is not an unsupported extra finding.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "clean-adapter",
+      "condition": "with_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Accepts the scoped test without must-fix findings.",
+          "evidence": "\"ACCEPT — Static review; tests not run.\" ; \"No blocking findings or additional scenarios are needed for this scoped change.\"",
+          "passed": true
+        },
+        {
+          "text": "Recognizes exact transport interaction as the dispatch contract, not self-testing.",
+          "evidence": "\"Its exact transport-call assertion catches omitted or one-sided trimming, altered body spacing, and duplicate dispatch. The transport mock is appropriate for this dispatch contract\"",
+          "passed": true
+        },
+        {
+          "text": "Does not demand live delivery, one assertion per test, mutation tools, or unrelated cases.",
+          "evidence": "\"No blocking findings or additional scenarios are needed for this scoped change.\"",
+          "passed": true
+        },
+        {
+          "text": "Explicitly distinguishes static review from passing execution.",
+          "evidence": "\"Static review; tests not run.\" ; \"Execution remains unverified.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "clean-adapter",
+      "condition": "without_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Accepts the scoped test without must-fix findings.",
+          "evidence": "\"ACCEPT — no concrete issues found in the changed test.\"",
+          "passed": true
+        },
+        {
+          "text": "Recognizes exact transport interaction as the dispatch contract, not self-testing.",
+          "evidence": "\"checks exactly one dispatch with the trimmed recipient and unchanged body, and verifies the returned receipt value. Mocking the transport fits the adapter’s responsibility;\"",
+          "passed": true
+        },
+        {
+          "text": "Does not demand live delivery, one assertion per test, mutation tools, or unrelated cases.",
+          "evidence": "\"live delivery is outside this test’s scope.\"",
+          "passed": true
+        },
+        {
+          "text": "Explicitly distinguishes static review from passing execution.",
+          "evidence": "\"Static review only; no code was executed. Discovery and runtime success remain unverified.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "api-authorization",
+      "condition": "with_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Explains the not-found guard prevents exercising the suspension decision.",
+          "evidence": "\"`\\\"/documents/missing-doc\\\"` reaches the handler’s `404/NOT_FOUND` return before the suspension check.\"",
+          "passed": true
+        },
+        {
+          "text": "Requires an existing owned document, 403/SUSPENDED, and unchanged stored title.",
+          "evidence": "\"Use the existing owned document, `/documents/doc-1`, and assert exactly `403` with error code `SUSPENDED`.\" ; \"After the request, freshly read `doc-1` and assert its title is `Original`.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not insist on duplicating the supplied active-owner success case.",
+          "evidence": "\"Keep the unchanged active-owner success test; another success case or a full role matrix is unnecessary.\"",
+          "passed": true
+        },
+        {
+          "text": "Labels sensitivity reasoning as static rather than observed execution.",
+          "evidence": "\"Static review; tests not run.\" ; \"even if the suspension check is deleted entirely.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "api-authorization",
+      "condition": "without_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Explains the not-found guard prevents exercising the suspension decision.",
+          "evidence": "\"`/documents/missing-doc` hits the handler’s `404/NOT_FOUND` branch before the suspension check.\"",
+          "passed": true
+        },
+        {
+          "text": "Requires an existing owned document, 403/SUSPENDED, and unchanged stored title.",
+          "evidence": "\"Target the existing owned document, `/documents/doc-1`.\" ; \"Assert exactly `403` and the response error code `SUSPENDED`.\" ; \"Read `doc-1` freshly from the database after the request and assert its title remains `Original`.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not insist on duplicating the supplied active-owner success case.",
+          "evidence": "\"The existing active-owner success test already covers successful editing.\"",
+          "passed": true
+        },
+        {
+          "text": "Labels sensitivity reasoning as static rather than observed execution.",
+          "evidence": "\"The test would still pass if suspension enforcement were removed.\" ; \"This static review does not establish that the corrected test passes.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "browser-recovery",
+      "condition": "with_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Identifies direct submit dispatch bypassing native validation on the second submission.",
+          "evidence": "\"`form.dispatchEvent(new Event('submit', ...))`, bypasses native constraint validation.\"",
+          "passed": true
+        },
+        {
+          "text": "Requires normal click or keyboard submission after correction and a successful observable result.",
+          "evidence": "\"Replace the direct dispatch with an awaited click on the Search button after filling `fixed`. Keep both visible-result assertions and the error-then-recovery sequence.\"",
+          "passed": true
+        },
+        {
+          "text": "Recognizes persistent custom validity as a possible product defect and does not weaken the test to hide it.",
+          "evidence": "\"Do not clear validity from test code: that would hide the production defect again.\" ; \"Preserve the contractual success expectation.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not reject intentional API response stubbing or claim the screenshot proves recovery.",
+          "evidence": "\"Keep route interception; it appropriately substitutes the API boundary while exercising the real browser and UI.\" ; \"The earlier screenshot from a direct request provides no evidence for recovery through this form.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not run a browser or edit production code during review.",
+          "evidence": "\"No browser, runner, or edits were used. Actual red/green behavior remains unverified;\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "browser-recovery",
+      "condition": "without_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Identifies direct submit dispatch bypassing native validation on the second submission.",
+          "evidence": "\"The second submission in `tests/search.spec.ts` uses `dispatchEvent(new Event('submit', ...))`, which invokes the handler without native form validation.\"",
+          "passed": true
+        },
+        {
+          "text": "Requires normal click or keyboard submission after correction and a successful observable result.",
+          "evidence": "\"await page.getByRole('button', { name: 'Search' }).click();\" ; \"Keep the final `Result 7` assertion.\"",
+          "passed": true
+        },
+        {
+          "text": "Recognizes persistent custom validity as a possible product defect and does not weaken the test to hide it.",
+          "evidence": "\"editing the value does not clear it.\" ; \"A separate production change should clear stale custom validity when the query is edited; the test must not clear it itself.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not reject intentional API response stubbing or claim the screenshot proves recovery.",
+          "evidence": "\"The route interception is appropriate for this browser-validation contract.\" ; \"The prior direct-request screenshot does not validate this recovery sequence;\"",
+          "passed": true
+        },
+        {
+          "text": "Does not run a browser or edit production code during review.",
+          "evidence": "\"No execution or edits performed.\" Output-only pass: no contrary execution/edit/delegation claim or instruction to act during review. Tool traces unavailable; actual action compliance UNVERIFIED. Quoted self-report is not proof of actions.",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0."
+      ]
+    },
+    {
+      "case": "evidence-and-cost",
+      "condition": "with_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Accepts case A as a static regression review and rejects changing 900 to 1000 merely to match the bug.",
+          "evidence": "\"A. ACCEPT — existing regression; reject the proposed expectation change.\" ; \"Changing the expected value to 1000 would encode that defect.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not block A just because Python is unavailable or claim an observed red run.",
+          "evidence": "\"Missing local Python does not block static acceptance.\" ; \"Static review; tests not run.\"",
+          "passed": true
+        },
+        {
+          "text": "Rejects B because the configured include excludes checks/sort.spec.ts.",
+          "evidence": "\"`checks/sort.spec.ts` is excluded by `tests/**/*.spec.ts`.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains identity/no-op sorting satisfies idempotence and calls for ordering plus element/multiplicity preservation.",
+          "evidence": "\"An identity implementation passes for unsorted inputs; an implementation returning `[]` passes while discarding everything. Strengthen the property to assert nondecreasing output and preservation of every input integer’s multiplicity.\"",
+          "passed": true
+        },
+        {
+          "text": "Rejects the arbitrary one-millisecond/p99 claim without inventing a performance SLO.",
+          "evidence": "\"Remove this timing assertion and its production-p99 claim. No replacement latency threshold is justified by the supplied contract.\"",
+          "passed": true
+        },
+        {
+          "text": "Preserves C's process-restart integration test as distinct persistence protection.",
+          "evidence": "\"C. REVISE — reject the proposed integration-test deletion.\" ; \"Keep both tests; withdraw the deletion.\" ; \"The native integration test protects the explicit restart contract:\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0.",
+        "Case C is judged by preservation of restart protection: ACCEPT retaining both and REVISE proposed deletion are equivalent acceptable decisions."
+      ]
+    },
+    {
+      "case": "evidence-and-cost",
+      "condition": "without_skill",
+      "sample": "run-1",
+      "expectations": [
+        {
+          "text": "Accepts case A as a static regression review and rejects changing 900 to 1000 merely to match the bug.",
+          "evidence": "\"A — ACCEPT the existing regression test; reject the expected-value change.\" ; \"Changing the expectation to 1000 would encode the defect.\"",
+          "passed": true
+        },
+        {
+          "text": "Does not block A just because Python is unavailable or claim an observed red run.",
+          "evidence": "\"Static review passes for the test; execution remains unverified because Python is unavailable.\"",
+          "passed": true
+        },
+        {
+          "text": "Rejects B because the configured include excludes checks/sort.spec.ts.",
+          "evidence": "\"`checks/sort.spec.ts` falls outside `tests/**/*.spec.ts`, so the configured test run will not select it.\"",
+          "passed": true
+        },
+        {
+          "text": "Explains identity/no-op sorting satisfies idempotence and calls for ordering plus element/multiplicity preservation.",
+          "evidence": "\"An identity implementation or one returning `[]` would pass. Compare the result against a numerically sorted copy of the input, which checks ordering, membership and duplicate counts together.\"",
+          "passed": true
+        },
+        {
+          "text": "Rejects the arbitrary one-millisecond/p99 claim without inventing a performance SLO.",
+          "evidence": "\"remove the unsupported timing assertion and p99 claim.\" ; \"without inventing a latency budget here.\"",
+          "passed": true
+        },
+        {
+          "text": "Preserves C's process-restart integration test as distinct persistence protection.",
+          "evidence": "\"C — ACCEPT retaining both tests; reject deletion as duplication.\" ; \"The integration test checks that the title actually survives saving, process termination and restart.\"",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "pass_rate": 1.0
+      },
+      "notes": [
+        "Graded output content only. Tool traces are unavailable; actual execution/edit/delegation compliance is UNVERIFIED, not proven by self-report.",
+        "No observed timing or token measurements were supplied or inferred.",
+        "Unsupported required repairs / false positives found: 0.",
+        "Case C is judged by preservation of restart protection: ACCEPT retaining both and REVISE proposed deletion are equivalent acceptable decisions."
+      ]
+    }
+  ]
+}
