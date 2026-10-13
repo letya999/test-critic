@@ -1,4 +1,13 @@
 {
   "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
-  "skills": ["test-critic"]
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Testing",
+      "description": "Review written tests: weak assertions, over-mocking, flakiness.",
+      "skills": [
+        "test-critic"
+      ]
+    }
+  ]
 }
